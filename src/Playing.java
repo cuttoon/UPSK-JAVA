@@ -11,5 +11,8 @@ public class Playing {
         String name = er.nextLine();
         System.out.println("Bienvenido " + name);
         System.out.println("Elige un número del 1 al 100");
+
+        int num = 1 + (int)(100 * Math.random());
+        System.out.println(num);
     }
 }
