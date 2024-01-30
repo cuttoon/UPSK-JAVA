@@ -7,7 +7,10 @@ public abstract class Player {
     // name: nombre de la jugadora
     // guesses: Historial de suposiciones de la jugadora
     private String name;
-    private static ArrayList<Integer> guesses;
+    private ArrayList<Integer> guesses;
+
+    // nuevo metodo abstracto
+    public abstract int makeGuess();
 
     // getter and setter
     public String getName() {
@@ -18,7 +21,7 @@ public abstract class Player {
         this.name = name;
     }
 
-    public static ArrayList<Integer> getGuesses() {
+    public ArrayList<Integer> getGuesses() {
         return guesses;
     }
 
@@ -26,10 +29,11 @@ public abstract class Player {
         this.guesses = guesses;
     }
 
-    // protected static Scanner numberScanner = new Scanner(System.in);
+    public void addGuess(int guess) {
+        guesses.add(guess);
+    }
 
-
-    // constructor
+    // constructor, para poder inicializar el objeto
     public Player(String name) {
         this.name = name;
         this.guesses = new ArrayList<>();
