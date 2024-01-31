@@ -1,5 +1,3 @@
-package test;
-
 import main.HumanPlayer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,7 +25,7 @@ class HumanPlayerTest {
     @Test
     public void testMakeGuess() {
 
-        HumanPlayer humanPlayer = new HumanPlayer("TestPlayer");
+        HumanPlayer humanPlayer = new HumanPlayer("Karen");
         Scanner scanner = mock(Scanner.class);
 
         when(scanner.nextLine()).thenReturn("50");
