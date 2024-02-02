@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Random;
@@ -33,7 +35,7 @@ public class GuessTheNumberGame {
         for (int attempts = 1; attempts <= maxIntentos; attempts++) {
             System.out.println("\nIntento " + String.format("%02d", attempts));
 
-            System.out.println("\nPlayer #1");
+            System.out.println("\nmain.Player #1");
             int currentGuess = humanPlayer.makeGuess();
             humanPlayer.addGuess(currentGuess);
             checkProximity(currentGuess);
@@ -43,7 +45,7 @@ public class GuessTheNumberGame {
                 break;
             }
 
-            System.out.println("Player #2");
+            System.out.println("main.Player #2");
             currentGuess = computerPlayer.makeGuess();
             computerPlayer.addGuess(currentGuess);
             System.out.println("Suposición de la computadora: " + currentGuess);
