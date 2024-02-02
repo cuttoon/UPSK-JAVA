@@ -20,11 +20,6 @@ class HumanPlayerTest {
 
     @Test
     void makeGuess() {
-    }
-
-    @Test
-    public void testMakeGuess() {
-
         HumanPlayer humanPlayer = new HumanPlayer("Karen");
         Scanner scanner = mock(Scanner.class);
 
