@@ -17,25 +17,20 @@ class GuessTheNumberGameTest {
 
      @Test
      void startGame() {
-          // dato de prueba
           int guessedNumber = 42;
 
-          // Simular entrada del usuario con ByteArrayInputStream
           String input = guessedNumber + "\n";
           InputStream inputStream = new ByteArrayInputStream(input.getBytes());
           System.setIn(inputStream);
 
-          // Simulando HumanPlayer y ComputerPlayer
           HumanPlayer humanPlayerMock = Mockito.mock(HumanPlayer.class);
           ComputerPlayer computerPlayerMock = Mockito.mock(ComputerPlayer.class);
 
-          // Simulando el comportamiento de HumanPlayer y ComputerPlayer
           when(humanPlayerMock.makeGuess()).thenReturn(guessedNumber);
           when(computerPlayerMock.makeGuess()).thenReturn(guessedNumber);
 
           GuessTheNumberGame game = new GuessTheNumberGame(humanPlayerMock, computerPlayerMock);
 
-          // Llamar a playGame
           game.playGame();
      }
 }

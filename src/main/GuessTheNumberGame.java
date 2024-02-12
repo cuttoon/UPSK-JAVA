@@ -7,25 +7,11 @@ import java.util.Scanner;
 
 public class GuessTheNumberGame {
 
-    // Atributos
     private Random random;
     private int targetNumber;
     private int maxIntentos = 5;
     private HumanPlayer humanPlayer;
     private ComputerPlayer computerPlayer;
-
-    // Constructor donde inicializo como el generador de numeros aleatorios
-   /* public GuessTheNumberGame() {
-        random = new Random();
-        targetNumber = random.nextInt(100) + 1;
-        humanPlayer = new HumanPlayer(getPlayerName());
-        computerPlayer = new ComputerPlayer();
-    }
-
-
-
-    public GuessTheNumberGame(HumanPlayer humanPlayerMock, ComputerPlayer computerPlayerMock) {
-    }*/
 
     public GuessTheNumberGame(HumanPlayer humanPlayer, ComputerPlayer computerPlayer) {
         random = new Random();
@@ -34,7 +20,6 @@ public class GuessTheNumberGame {
         this.computerPlayer = computerPlayer;
     }
 
-    // Método main para inicalizar el juego el juego
     public static void main(String[] args){
         HumanPlayer humanPlayer = new HumanPlayer("Karen");
         ComputerPlayer computerPlayer = new ComputerPlayer();
@@ -77,8 +62,6 @@ public class GuessTheNumberGame {
         printGuesses(computerPlayer);
     }
 
-
-    // Eliminando duplicados con LinkedHashSet
     private void printGuesses(Player player) {
         System.out.println("\n" + player.getName() + "'s Jugadas:");
         ArrayList<Integer> uniqueGuesses = new ArrayList<>(new LinkedHashSet<>(player.getGuesses()));
@@ -89,7 +72,6 @@ public class GuessTheNumberGame {
         System.out.println();
     }
 
-    // Verificar que la suposicón sea igual al que se ingresa
     private boolean checkGuess(int guess) {
         return guess == targetNumber;
     }
