@@ -3,8 +3,12 @@ package main;
 import java.util.Random;
 
 public class ComputerPlayer extends  Player{
-    public ComputerPlayer() {
-        super("Computer");
+    public ComputerPlayer(String name) {
+        super(name != null ? name : "Computer");
+    }
+
+    public ComputerPlayer(){
+        this(null);
     }
 
     public int makeGuess() {

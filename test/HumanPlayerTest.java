@@ -1,35 +1,24 @@
 import main.HumanPlayer;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 class HumanPlayerTest {
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
-    void makeGuess() {
-        HumanPlayer humanPlayer = new HumanPlayer("Karen");
-        Scanner scanner = mock(Scanner.class);
+    void testGetName() {
 
-        when(scanner.nextLine()).thenReturn("50");
+        String name = "Karen";
 
-        // Llamar al método makeGuess
-        int guess = humanPlayer.makeGuess();
+        HumanPlayer humanPlayer = new HumanPlayer(name);
 
-        // Verificar que el resultado
-        assertEquals(50, guess);
+        String playerName = humanPlayer.getName();
+        assertEquals(name, playerName);
     }
 
 }

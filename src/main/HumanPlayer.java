@@ -8,10 +8,7 @@ public class HumanPlayer extends Player {
 
     public HumanPlayer(String name) {
         super(name);
-        // this.scanner = new Scanner(System.in);
     }
-
-    // Constructor
 
     public int makeGuess() {
         Scanner scanner = new Scanner(System.in);
@@ -20,10 +17,4 @@ public class HumanPlayer extends Player {
         getGuesses().add(guess);
         return guess;
     }
-
-    /* public String getName(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese su nombre: ");
-        return scanner.next();
-    } */
 }
